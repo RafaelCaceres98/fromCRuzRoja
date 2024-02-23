@@ -1,0 +1,12 @@
+.my-custom-margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    padding: 5px 10px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer
+  }

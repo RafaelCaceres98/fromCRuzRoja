@@ -1,0 +1,46 @@
+.my-custom-margin {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+
+  button.mat-raised-button {
+    background-color:r#ec0303; /* Cambia el color de fondo */
+    color: rgb(0, 0, 0); /* Cambia el color del texto */
+    border-radius: 5px; /* Añade esquinas redondeadas */
+    padding: 8px 16px; /* Ajusta el padding */
+    font-weight: bold; /* Hace que el texto sea negrita */
+    text-transform: uppercase; /* Convierte el texto en mayúsculas */
+    transition: background-color 0.3s ease; /* Agrega una transición suave al color de fondo */
+}
+
+button.mat-raised-button:hover {
+  background-color: #0227ca; /* Cambia el color de fondo al pasar el ratón */
+}
+
+
+.tabla {
+  overflow-x: auto; /* Agrega una barra de desplazamiento horizontal si la tabla es demasiado ancha */
+}
+
+.table {
+  width: 100%; /* Hace que la tabla ocupe todo el ancho disponible */
+  border-collapse: collapse; /* Fusiona los bordes de las celdas */
+}
+
+  .btn {
+    padding: 5px 10px;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    cursor: pointer
+  }
+
+  .mat-card {
+
+    
+    background-size: cover;
+    /* Si quieres aplicar estilos adicionales específicos para el mat-card */
+    /* Por ejemplo, ajustar la opacidad para que el fondo sea más tenue */
+   
+ }

@@ -1,0 +1,62 @@
+<h2 mat-dialog-title>{{tituloAccion}}SOAT</h2>
+
+<mat-dialog-content>
+    <form [formGroup]="formularioSoat">
+        <mat-grid-list cols="1" rowHeight="80px">
+
+    <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de Solicitud</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="FechaSolicitud" placeholder="Fecha de Solicitud">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de Vencimiento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="FechaVencimiento" placeholder="Fecha de Vencimiento">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Tiempo</mat-label>
+            <input matInput autocomplete="off"formControlName="Tiempo">
+            <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+    </mat-grid-tile>
+
+    <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>% Vencimiento</mat-label>
+            <input matInput autocomplete="off"formControlName="PorcentajeVencimiento">
+            <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+    </mat-grid-tile>
+
+    
+    <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label> Periodicidad </mat-label>
+            <input matInput autocomplete="off"formControlName="Periodicidad">
+            <mat-icon matSuffix>account-box</mat-icon>
+        </mat-form-field>
+    </mat-grid-tile>
+
+</mat-grid-list>
+</form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+    <button mat-raised-button  color="primary"
+        [disabled]="formularioSoat.invalid"
+        (click)="guardarEditar_Soat()"
+    >{{botonAccion}}</button>
+
+</mat-dialog-actions>

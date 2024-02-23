@@ -1,0 +1,70 @@
+<h2 mat-dialog-title>{{tituloAccion}}Mantenimientos</h2>
+
+<mat-dialog-content>
+        <form [formGroup]="formularioMantenimiento">
+            <mat-grid-list cols="1"rowHeight="80px">
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>TipoMantenimiento</mat-label>
+                        <mat-select formControlName="IdTipoMantenimiento">
+                            <mat-option 
+                                *ngFor="let item of listaTipoMantenimiento"
+                                [value]="item.idTipoMantenimiento"
+                            >
+                                {{item.nombre}}
+                            </mat-option>
+                        </mat-select>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>DescripcionMantenimiento</mat-label>
+                        <input matInput autocomplete="off"formControlName="descripcionMantenimiento" >
+                        <mat-icon matSuffix>attach_money</mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Kilometraje</mat-label>
+                        <input matInput autocomplete="off"formControlName="Kilometraje" >
+                        <mat-icon matSuffix>attach_money</mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Estado</mat-label>
+                        <input matInput autocomplete="off"formControlName="estadodelVehiculo" >
+                        <mat-icon matSuffix>attach_money</mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+
+                <mat-grid-tile>
+                    <mat-form-field appearance="outline">
+                        <mat-label>Observaciones</mat-label>
+                        <input matInput autocomplete="off" formControlName="observaciones" >
+                        <mat-icon matSuffix>attach_money</mat-icon>
+                    </mat-form-field>
+                </mat-grid-tile>
+
+            </mat-grid-list>
+        </form>
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+    <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+    <button mat-raised-button  color="warn"
+        (click)="guardarEditar_Mantenimiento()"
+        [disabled]="formularioMantenimiento.invalid"
+    >{{botonAccion}}</button>
+
+  
+
+</mat-dialog-actions>
+

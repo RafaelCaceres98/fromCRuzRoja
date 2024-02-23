@@ -1,0 +1,73 @@
+<mat-card style="margin:20px 40px 40px 40px">
+
+    <mat-card-title>
+        <button mat-raised-button color="warn" (click) ="nuevoVehiculo()">
+            <mat-icon mat-list-icon> add </mat-icon> Registrar Vehiculo
+        </button>
+     </mat-card-title>
+    
+
+     <div class="my-custom-margin"></div>
+     <mat-divider></mat-divider>
+     <div class="my-custom-margin"></div>
+     
+    
+     <mat-card-content class="dashboard-card-content">
+    
+        <mat-form-field  appearance ="outline">
+            <mat-label>Buscar</mat-label>
+            <input matInput (keyup)="aplicarFiltroTabla($event)"#input>
+        </mat-form-field>
+
+        <section class="tabla">
+            <div class="container">
+              <h1 class="titulo-tabla"> Lista de Vehiculos</h1>
+              <table class="table table-striped tabla-estilo">
+                <thead class="cabecero-tabla">
+                  <tr>
+                    <th scope="col">IVehiculo</th>
+                    <th scope="col">Placa</th>
+                    <th scope="col">Modelo</th>
+                    <th scope="col">Marca</th>
+                    <th scope="col">Chasis</th>
+                    <th scope="col">Motor</th>
+                    <th scope="col">Tipo</th>
+                    <th scope="col">N Movil</th>
+                    <th scope="col">Propiedad</th>
+                    <th scope="col">Descripcion</th>
+                    <th scope="col">AñoR</th>
+                    <th scope="col">Ubicacion</th>
+                    <th scope="col">¿ESActivo?</th>
+                    <th scope="col">FechaRegistro</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Eliminar</th>
+                  </tr>
+                </thead>
+               <tbody class="cabecero-tabla">
+                  <tr *ngFor="let vehiculo of listaVehiculos" class="elemento">
+                    <td>{{vehiculo.idVehiculo}} </td>
+                    <td>{{vehiculo.numeroPlaca}} </td>
+                    <td>{{vehiculo.modelo}} </td>
+                    <td>{{vehiculo.marca}} </td>
+                    <td>{{vehiculo.chasis}} </td>
+                    <td>{{vehiculo.motor}} </td>
+                    <td>{{vehiculo.tipo}} </td>
+                    <td>{{vehiculo.numerdeMovil}} </td>
+                    <td>{{vehiculo.propiedad}} </td>
+                    <td>{{vehiculo.descripcioEstado}}</td>
+                    <td>{{vehiculo.anoderecibidoelvehiculo}}</td>
+                    <td>{{vehiculo.ubicacion}} </td>
+                    <td>{{(vehiculo.esActivo)? 'Activo' : 'Inactivo'}} </td>
+                    <td>{{vehiculo.fechaRegistro}} </td>
+                   <td><button (click)="editarVehiculo(vehiculo)" class="btn" style="background-color: blue;">Editar</button></td>
+                    <td><button (click)="eliminarVehiculo(vehiculo)" class="btn" style="background-color: red;">Eliminar</button></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+            
+     </mat-card-content>
+    
+    
+    </mat-card> 

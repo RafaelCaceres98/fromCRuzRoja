@@ -1,0 +1,68 @@
+<mat-toolbar color="warn">
+    <mat-toolbar-row>
+       <h1>Sistema Gestion de Mantenimiento</h1>
+   
+   
+       <button mat-icon-button (click)="sidenav.toggle();">
+           <mat-icon>menu</mat-icon>
+       </button>
+   
+    </mat-toolbar-row>
+   
+   </mat-toolbar>
+   
+   <mat-sidenav-container>
+       <mat-sidenav #sidenav opened ="true" mode="side" style="width: 200px;">
+           <mat-nav-list>
+          
+               <mat-list-item routerLink="/pages/dashboard">
+                      <mat-icon mat-list-icon>dashboard</mat-icon> 
+                      <div mat-line>DashBoard</div>
+               </mat-list-item>
+   
+               <mat-list-item routerLink="/pages/usuarios">
+                   <mat-icon mat-list-icon>group</mat-icon> 
+                   <div mat-line>Usuarios</div>
+            </mat-list-item>
+   
+            <mat-list-item routerLink="/pages/vehiculos">
+               <mat-icon mat-list-icon>collections</mat-icon> 
+               <div mat-line>Vehiculos</div>
+        </mat-list-item>
+   
+            <mat-list-item routerLink="/pages/Mantenimientos">
+               <mat-icon mat-list-icon>collections</mat-icon> 
+               <div mat-line>Mantenimientos</div>
+        </mat-list-item>
+   
+   
+    <mat-list-item routerLink="/pages/Historial_Vehiculos">
+           <mat-icon mat-list-icon>edit_note</mat-icon> 
+           <div mat-line>Historial Vehiculos</div>
+    </mat-list-item>
+   
+    <mat-list-item routerLink="/pages/Soat">
+       <mat-icon mat-list-icon>receipt</mat-icon> 
+       <div mat-line>Soat</div>
+   </mat-list-item>
+   
+    <mat-list-item routerLink="/pages/Reportes">
+           <mat-icon mat-list-icon>receipt</mat-icon> 
+           <div mat-line>Reportes</div>
+    </mat-list-item>
+   
+   
+   
+   
+           </mat-nav-list>
+   
+       </mat-sidenav>
+   
+       <mat-sidenav-content>
+           <div style="height: 90vh;">
+           <router-outlet></router-outlet>
+           </div>
+   
+       </mat-sidenav-content>
+   </mat-sidenav-container>
+   

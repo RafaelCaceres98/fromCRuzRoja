@@ -1,0 +1,127 @@
+<h2 mat-dialog-title>{{ tituloAccion }} Vehiculo</h2>
+
+<mat-dialog-content>
+  <form [formGroup]="formularioVehiculo">
+    <mat-grid-list cols="1" rowHeight="80px">
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Placa</mat-label>
+          <input matInput autocomplete="off" formControlName="numeroPlaca">
+          <mat-icon matSuffix>fit_screen</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Modelo</mat-label>
+          <input matInput autocomplete="off" formControlName="modelo">
+          <mat-icon matSuffix>edit_square</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Marca</mat-label>
+          <input matInput autocomplete="off" formControlName="marca">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Chasis</mat-label>
+          <input matInput autocomplete="off" formControlName="chasis">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Motor</mat-label>
+          <input matInput autocomplete="off" formControlName="motor">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Tipo</mat-label>
+          <input matInput autocomplete="off" formControlName="tipo">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>N° Movil</mat-label>
+          <input matInput autocomplete="off" formControlName="numerdeMovil">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Propiedad</mat-label>
+          <input matInput autocomplete="off" formControlName="propiedad">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>DescEstado</mat-label>
+          <input matInput autocomplete="off" formControlName="descripcioEstado">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>AñoR</mat-label>
+          <input matInput autocomplete="off" formControlName="añoderecibidoelvehiculo">
+          <mat-icon matSuffix>edit_square</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Ubicacion</mat-label>
+          <input matInput autocomplete="off" formControlName="ubicacion">
+          <mat-icon matSuffix>attach_money</mat-icon>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+          <mat-label>Fecha de Registro</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="fechaRegistro" placeholder="Fecha de Registro">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="outline">
+            <mat-label>Estado</mat-label>
+            <mat-select formControlName="esActivo">
+                <mat-option value="1">Activo</mat-option>
+                <mat-option value="0">No activo </mat-option>
+            </mat-select>
+        </mat-form-field>
+    </mat-grid-tile>
+      
+      
+     
+
+    </mat-grid-list>
+  </form>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-raised-button mat-dialog-close color="warn">Volver</button>
+  <button mat-raised-button color="primary" [disabled]="formularioVehiculo.invalid" (click)="guardarEditar_Vehiculo()">
+    {{ botonAccion }}
+  </button>
+</mat-dialog-actions>
